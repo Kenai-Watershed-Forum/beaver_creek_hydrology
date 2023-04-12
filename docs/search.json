@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "beaver_creek_hydrology",
-    "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2\n\n\ntest"
-  },
-  {
     "objectID": "intro.html",
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "Introduction…\n\n\n\n\n\nDownload Temperature Logger Site Metadata for USGS / KWF Beaver Creek Hydrology Project\n\n\n\nLeaflet map of site locations\n\n\n\n\n\n\n\n\n\n\n\n\nVisually designate flagged data\n\n\n\nPlot time series again with flagged data in red\n\n\n\n\n\n\nRecords for time periods flagged for individual loggers are recorded and available to view at the download below.\n\n\nDownload Temperature Logger Flagged Data Records\n\n\n\n\n\nThis script was developed with assistance from Dr. Jose Bentancourt in April 2023: https://www.linkedin.com/in/djbetancourt/\nTest"
   },
   {
     "objectID": "summary.html",
@@ -19,12 +12,5 @@
     "title": "2  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
   }
 ]

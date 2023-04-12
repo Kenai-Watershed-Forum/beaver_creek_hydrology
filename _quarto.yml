@@ -2,24 +2,39 @@ project:
   type: book
   output-dir: docs
 
-
 book:
-  title: "beaver_creek_hydrology"
-  author: "Jane Doe"
-  date: "4/12/2023"
+  title: "Beaver Creek Hydrology [DRAFT]"
+  author: "Benjamin Meyer, Kenai Watershed Forum"
+  date: "4/10/2023"
+  page-navigation: true
   chapters:
     - index.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
 
+  repo-url: https://github.com/Kenai-Watershed-Forum/beaver_creek_hydrology
+  repo-actions: [edit]
+  search:
+    location: sidebar
+    type: textbox
+  downloads: [docx]
+
 bibliography: references.bib
 
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
+  #pdf:
+  #  documentclass: scrreprt
+  docx:
+    toc: true
+    toc-depth: 2
+    toc-title: Table of contents
+    number-sections: true
+    highlight-style: github
 
 editor: visual
+
+prefer-html: true
 

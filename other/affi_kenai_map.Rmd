@@ -1,0 +1,24 @@
+---
+title: "affi_kenai_map"
+author: "Benjamin Meyer"
+date: "2023-04-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(janitor)
+```
+
+
+
+```{r}
+dat <- read.csv("other/input/AFFI_June_2022.csv") %>%
+  clean_names() %>%
+  filter(community_name == "Kenai Peninsula Borough") %>%
+  distinct(species)
+  
+```
+

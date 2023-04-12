@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "methods.html",
+    "href": "methods.html",
+    "title": "1  Methods",
     "section": "",
-    "text": "Introduction…\n\n\n\n\n\nDownload Temperature Logger Site Metadata for USGS / KWF Beaver Creek Hydrology Project\n\n\n\nLeaflet map of site locations\n\n\n\n\n\n\n\n\n\n\n\n\nVisually designate flagged data\n\n\n\nPlot time series again with flagged data in red\n\n\n\n\n\n\nRecords for time periods flagged for individual loggers are recorded and available to view at the download below.\n\n\nDownload Temperature Logger Flagged Data Records\n\n\n\n\n\nThis script was developed with assistance from Dr. Jose Bentancourt in April 2023: https://www.linkedin.com/in/djbetancourt/\nTest"
+    "text": "Our project includes water temperature data froma total of fifteen locations throughout the Beaver Creek watershed.\n\n\n\n\n\nDownload Temperature Logger Site Metadata for USGS / KWF Beaver Creek Hydrology Project\n\n\n\nLeaflet map of site locations\n\n\n\n\n\n\n\n\n\n\n\n\nVisually designate flagged data\n\n\n\nPlot time series again with flagged data in red\n\n\n\n\n\n\nRecords for time periods flagged for individual loggers are recorded and available to view at the download below.\n\n\nDownload Temperature Logger Flagged Data Records\n\n\n\n\n\nThis script was developed with assistance from Dr. Jose Bentancourt in April 2023: https://www.linkedin.com/in/djbetancourt/\nTest"
   },
   {
     "objectID": "summary.html",
@@ -12,5 +12,12 @@
     "title": "2  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Beaver Creek Hydrology [DRAFT]",
+    "section": "",
+    "text": "Preface\nIn Spring 2022, the United States Geological Survey (USGS) initiated a partnership with Kenai Watershed Forum (KWF) with support from the Alaska Climate Action Science Center (AK CASC). The project will investigate hydrological conditions in the Beaver Creek watershed, a lowland tributary of the Kenai River. The project will use present-day data on water temperature, discharge, and landscape characteristics to model future conditions under future scenarios of climate conditions and groundwater usage.\nThis document is a draft in progress and is for use only in disseminating information among the research team. All data is preliminary and has not been approved for use in publications by USGS or any other entity, as of 2023-04-12"
   }
 ]

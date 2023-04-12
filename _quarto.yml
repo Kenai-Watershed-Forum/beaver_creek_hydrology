@@ -9,7 +9,7 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - intro.qmd
+    - methods.qmd
     - summary.qmd
     - references.qmd
 

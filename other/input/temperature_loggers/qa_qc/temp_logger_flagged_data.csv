@@ -1,4 +1,4 @@
-logger_id,date_time_start,date_time_stop,notes
+logger_serial,date_time_start,date_time_stop,notes
 10816960,7/4/2022 0:06,7/7/2022 12:00,pre-deployment
 20625008,7/4/2022 18:00,7/7/2022 12:15,
 21235340,7/4/2022 18:00,7/5/2022 18:00,

@@ -103,7 +103,13 @@ An ArcGIS Online map of site locations is displayed below. The map may also be a
 
 #### Pre-deployment
 
-Prior to deployment, all water temperature loggers 
+Prior to deployment, all water temperature loggers undergo a QA/QC check as described in [@mauger2015].
+
+#### Post-deployment
+
+Data was downloaded from all loggers in September/October 2022, and reviewed in Spring 2023. Each time series was visually inspected in an R Shiny plot for data that is non-representative of stream channel conditions, such as exposure to air or burial in sand.
+
+Segments of each time series identified as non-representative of stream channel conditions were flagged in a seperate csv file, then applied to flag and remove these 
 
 
 ```{r, echo = F, cache = TRUE}

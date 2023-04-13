@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Beaver Creek Hydrology [DRAFT]",
-    "section": "",
-    "text": "Preface\nIn Spring 2022, the United States Geological Survey (USGS) initiated a partnership with Kenai Watershed Forum (KWF) with support from the Alaska Climate Action Science Center (AK CASC). The project will investigate hydrological conditions in the Beaver Creek watershed, a lowland tributary of the Kenai River. The project will use present-day data on water temperature, discharge, and landscape characteristics to model future conditions under future scenarios of climate conditions and groundwater usage.\nThis document is a draft in progress and is for use only in disseminating information among the research team. All data is preliminary and has not been approved for use in publications by USGS or any other entity, as of 2023-04-12"
-  },
-  {
     "objectID": "methods.html#water-temperature-loggers",
     "href": "methods.html#water-temperature-loggers",
     "title": "1  Methods",
     "section": "1.1 Water Temperature Loggers",
-    "text": "1.1 Water Temperature Loggers\nOur project includes water temperature data from a total of fifteen locations throughout the Beaver Creek watershed. In summer 2022 we established thirteen sites to monitor water temperature with HOBO TempPro v2 loggers, in addition to the one site previously established by Kenai Watershed Forum. The USGS Alaska Science Center also established a real-time discharge monitoring station, which records water temperature in addition to discharge.\nSite location and other metadata are available for download in the link below\n\n\n\n\n\nDownload Temperature Logger Site Metadata for USGS / KWF Beaver Creek Hydrology Project\n\n\n\nAn ArcGIS Online map of site locations is displayed below. The map may also be accessed at https://arcg.is/0ySarv1.\n\n\n<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class=\"embed-container\"><small><a href=\"//kwf.maps.arcgis.com/apps/Embed/index.html?webmap=97eeaaf4e3ce4ecfa7ee2228b0373c07&extent=-151.3279,60.5578,-150.8627,60.6559&home=true&zoom=true&scale=true&search=true&searchextent=true&basemap_gallery=true&disable_scroll=true&theme=light\" style=\"color:#0000FF;text-align:left\" target=\"_blank\">View larger map</a></small><br><iframe width=\"500\" height=\"400\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" title=\"Beaver Creek Groundwater and Stream Temperature\" src=\"//kwf.maps.arcgis.com/apps/Embed/index.html?webmap=97eeaaf4e3ce4ecfa7ee2228b0373c07&extent=-151.3279,60.5578,-150.8627,60.6559&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&basemap_gallery=true&disable_scroll=true&theme=light\"></iframe></div>\n\n\n\n\n\n\n\n\n\n\nVisually designate flagged data\n\n\n\nPlot time series again with flagged data in red\n\n\n\n\n\n\nRecords for time periods flagged for individual loggers are recorded and available to view at the download below.\n\n\nDownload Temperature Logger Flagged Data Records\n\n\n\n\n\nThis script was developed with assistance from Dr. Jose Bentancourt in April 2023: https://www.linkedin.com/in/djbetancourt/\nTest"
+    "text": "1.1 Water Temperature Loggers\n\n1.1.1 Locations\nOur project includes water temperature data from a total of fifteen locations throughout the Beaver Creek watershed. In summer 2022 we established thirteen sites to monitor water temperature with HOBO TempPro v2 loggers, in addition to the one site previously established by Kenai Watershed Forum. The USGS Alaska Science Center also established a real-time discharge monitoring station, which records water temperature in addition to discharge.\nSite location and other metadata are available for download in the link below.\n\n\n\n\n\nDownload Temperature Logger Site Metadata for USGS / KWF Beaver Creek Hydrology Project\n\n\n\nAn ArcGIS Online map of site locations is displayed below. The map may also be accessed at https://arcg.is/0ySarv1.\n\n\n\nView larger map\n\n\n\n\n1.1.2 QA/QC Checks\n\n1.1.2.1 Pre-deployment\nPrior to deployment, all water temperature loggers\n\n\n\n\n\n\n\n\n\nVisually designate flagged data\n\n\n\nPlot time series again with flagged data in red\n\n\n\n\n\n\nRecords for time periods flagged for individual loggers are recorded and available to view at the download below.\n\n\nDownload Temperature Logger Flagged Data Records\n\n\n\n\n\nThis script was developed with assistance from Dr. Jose Bentancourt in April 2023: https://www.linkedin.com/in/djbetancourt/\nTest"
   },
   {
     "objectID": "summary.html",
@@ -19,5 +12,12 @@
     "title": "2  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Beaver Creek Hydrology [DRAFT]",
+    "section": "",
+    "text": "Preface\nIn Spring 2022, the United States Geological Survey (USGS) initiated a partnership with Kenai Watershed Forum (KWF) with support from the Alaska Climate Action Science Center (AK CASC). The project will investigate hydrological conditions in the Beaver Creek watershed, a lowland tributary of the Kenai River. The project will use present-day data on water temperature, discharge, and landscape characteristics to model future conditions under future scenarios of climate conditions and groundwater usage.\nThis document is a draft in progress and is for use only in disseminating information among the research team. All data is preliminary and has not been approved for use in publications by USGS or any other entity, as of 2023-04-12"
   }
 ]

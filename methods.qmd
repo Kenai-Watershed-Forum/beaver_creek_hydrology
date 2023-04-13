@@ -99,6 +99,13 @@ An ArcGIS Online map of site locations is displayed below. The map may also be a
 
 <br>
 
+### QA/QC Checks
+
+#### Pre-deployment
+
+Prior to deployment, all water temperature loggers 
+
+
 ```{r, echo = F, cache = TRUE}
 
 # Prepare water temperature data for inspection

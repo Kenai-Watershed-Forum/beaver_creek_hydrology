@@ -36,7 +36,7 @@ library(leaflet)
 
 Our project includes water temperature data from a total of fifteen locations throughout the Beaver Creek watershed. In summer 2022 we established thirteen sites to monitor water temperature with HOBO TempPro v2 loggers, in addition to the one site previously established by Kenai Watershed Forum. The USGS Alaska Science Center also established a real-time discharge monitoring station, which records water temperature in addition to discharge.
 
-Site location and other metadata are available for download in the link below
+Site location and other metadata are available for download in the link below.
 
 ```{r echo = F}
 # prepare temperature logger station metadata
@@ -86,20 +86,18 @@ xfun::embed_file("other/output/station.csv", text = "Download Temperature Logger
 
 <br>
 
-An ArcGIS Online map of site locations is displayed below. The map may also be accessed at https://arcg.is/0ySarv1. 
-
-```{html}
-
-<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><small><a href="//kwf.maps.arcgis.com/apps/Embed/index.html?webmap=97eeaaf4e3ce4ecfa7ee2228b0373c07&extent=-151.3279,60.5578,-150.8627,60.6559&home=true&zoom=true&scale=true&search=true&searchextent=true&basemap_gallery=true&disable_scroll=true&theme=light" style="color:#0000FF;text-align:left" target="_blank">View larger map</a></small><br><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Beaver Creek Groundwater and Stream Temperature" src="//kwf.maps.arcgis.com/apps/Embed/index.html?webmap=97eeaaf4e3ce4ecfa7ee2228b0373c07&extent=-151.3279,60.5578,-150.8627,60.6559&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&basemap_gallery=true&disable_scroll=true&theme=light"></iframe></div>
-
-
-
-
-```
+An ArcGIS Online map of site locations is displayed below. The map may also be accessed at <https://arcg.is/0ySarv1>.
 
 <br>
 
+```{=html}
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+```
+::: embed-container
+<small><a href="//kwf.maps.arcgis.com/apps/Embed/index.html?webmap=97eeaaf4e3ce4ecfa7ee2228b0373c07&extent=-151.3279,60.5578,-150.8627,60.6559&home=true&zoom=true&scale=true&search=true&searchextent=true&basemap_gallery=true&disable_scroll=true&theme=light" style="color:#0000FF;text-align:left" target="_blank">View larger map</a></small><br><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Beaver Creek Groundwater and Stream Temperature" src="//kwf.maps.arcgis.com/apps/Embed/index.html?webmap=97eeaaf4e3ce4ecfa7ee2228b0373c07&extent=-151.3279,60.5578,-150.8627,60.6559&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&basemap_gallery=true&disable_scroll=true&theme=light"></iframe>
+:::
 
+<br>
 
 ```{r, echo = F, cache = TRUE}
 

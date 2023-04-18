@@ -1,7 +1,19 @@
 # Preface {.unnumbered}
 
+---
+execute:
+  echo: false
+  freeze: true
+date: "`r Sys.Date()`"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    code-summary: "Show the code"
+---
+
 In Spring 2022, the United States Geological Survey (USGS) initiated a partnership with Kenai Watershed Forum (KWF) with support from the [Alaska Climate Action Science Center](https://akcasc.org/) (AK CASC). The project will investigate hydrological conditions in the Beaver Creek watershed, a lowland tributary of the Kenai River. The project will use present-day data on water temperature, discharge, and landscape characteristics to model future conditions under future scenarios of climate conditions and groundwater usage.
 
-This document is a draft in progress and is for use only in disseminating information among the research team. All data is preliminary and has not been approved for use in publications by USGS or any other entity, as of `r Sys.Date().`
+This document is a draft in progress and is for use only in disseminating information among the research team. All data is preliminary and has not been approved for use in publications by USGS or any other entity, as of `r Sys.Date()`.
 
 For more details visit <https://www.kenaiwatershed.org/water-research-news/usgs-beaver-creek/>.

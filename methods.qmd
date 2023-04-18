@@ -34,7 +34,7 @@ library(leaflet)
 
 ### Locations
 
-Our project includes water temperature data from a total of fifteen locations throughout the Beaver Creek watershed. In summer 2022 we established thirteen sites to monitor water temperature with HOBO TempPro v2 loggers, in addition to the one site previously established by Kenai Watershed Forum. The USGS Alaska Science Center also established a real-time gauging station in the lower reach, which records water temperature in addition to discharge. These data (station \# 15266500) are available online at <https://waterdata.usgs.gov/monitoring-location/15266500/>.
+Our project includes water temperature data from a total of fifteen locations throughout the Beaver Creek watershed. In summer 2022 we established thirteen sites to monitor water temperature with HOBO TempPro v2 loggers, in addition to the one site previously established by Kenai Watershed Forum. The USGS Alaska Science Center also established a real-time gauging station in the lower reach, which records water temperature in addition to discharge (station \# 15266500). These data  are available online at <https://waterdata.usgs.gov/monitoring-location/15266500/>.
 
 Site locations and other metadata are available for download in the link below.
 
@@ -277,23 +277,23 @@ allData <- left_join(allData,station)
 
 ## --> not done here yet
 
-# export individual time series from each site
-# method copied from from https://gist.github.com/jflanaga/1ab2fa1434064780d2237e73d9e669c4
+
+
 # set output directory
 temp_output_dir <- "other/output/post_qa_data/"
+
+# remove old zip file and individual csv files
+unlink(paste0(temp_output_dir,"*"))
+
+# export individual time series from each site
+# method adapted from from https://gist.github.com/jflanaga/1ab2fa1434064780d2237e73d9e669c4
 allData %>% 
   group_by(logger_serial) %>% 
   group_walk(~ write_csv(.x, paste0(temp_output_dir,.y$logger_serial,".csv")))
 
-
-
-
 # zip multiple csv files
 zip_files <- list.files(path = temp_output_dir, pattern = ".csv$", full.names=TRUE)
 zipfile <- paste0(temp_output_dir,"beaver_creek_water_temps_",Sys.Date(),".zip")
-
-# remove old zip file
-file.remove(zipfile)
 
 # create new zipfile
 zip::zipr(zipfile, files = zip_files)

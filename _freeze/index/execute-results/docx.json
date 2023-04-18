@@ -1,0 +1,20 @@
+{
+  "hash": "46173f93e55269656a1e52b793071ccc",
+  "result": {
+    "markdown": "# Preface {.unnumbered}\n\n\n\n---\nexecute:\n  echo: false\n  freeze: true\ndate: \"2023-04-18\"\nformat:\n  html:\n    code-fold: true\n    code-tools: true\n    code-summary: \"Show the code\"\n---\n\n\n\nIn Spring 2022, the United States Geological Survey (USGS) initiated a partnership with Kenai Watershed Forum (KWF) with support from the [Alaska Climate Action Science Center](https://akcasc.org/) (AK CASC). The project will investigate hydrological conditions in the Beaver Creek watershed, a lowland tributary of the Kenai River. The project will use present-day data on water temperature, discharge, and landscape characteristics to model future conditions under future scenarios of climate conditions and groundwater usage.\n\nThis document is a draft in progress and is for use only in disseminating information among the research team. All data is preliminary and has not been approved for use in publications by USGS or any other entity, as of 2023-04-18.\n\nFor more details visit <https://www.kenaiwatershed.org/water-research-news/usgs-beaver-creek/>.\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

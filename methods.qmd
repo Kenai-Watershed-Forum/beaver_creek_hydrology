@@ -113,7 +113,7 @@ Content TBD here.
 
 We downloaded data from all loggers in September/October 2022, and reviewed it in Spring 2023. Each logger's time series was visually inspected in an R Shiny plot for data that is non-representative of stream channel conditions, such as exposure to air or burial in sand.
 
-Segments of each time series identified as non-representative of stream channel conditions were flagged in a seperate csv file, then applied to flag and remove these segments.
+Segments of each time series that were identified as non-representative were flagged in a separate csv file, then applied in order to remove these segments.
 
 An example plot for one logger is shown below, with flagged data in red and retained data in black.
 

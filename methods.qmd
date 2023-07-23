@@ -34,7 +34,7 @@ library(leaflet)
 
 ### Locations
 
-Our project includes water temperature data from a total of fifteen locations throughout the Beaver Creek watershed. In summer 2022 we established thirteen sites to monitor water temperature with HOBO TempPro v2 loggers, in addition to the one site previously established by Kenai Watershed Forum. The USGS Alaska Science Center also established a real-time gauging station in the lower reach, which records water temperature in addition to discharge (station \# 15266500). These data  are available online at <https://waterdata.usgs.gov/monitoring-location/15266500/>.
+Our project includes water temperature data from a total of fifteen locations throughout the Beaver Creek watershed. In summer 2022 we established thirteen sites to monitor water temperature with HOBO TempPro v2 loggers, in addition to the one site previously established by Kenai Watershed Forum. The USGS Alaska Science Center also established a real-time gauging station in the lower reach, which records water temperature in addition to discharge (station \# 15266500). These data are available online at <https://waterdata.usgs.gov/monitoring-location/15266500/>.
 
 Site locations and other metadata are available for download in the link below.
 

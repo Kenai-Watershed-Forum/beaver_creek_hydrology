@@ -103,13 +103,15 @@ An ArcGIS Online map of site locations is displayed below. The map may also be a
 
 #### Pre-deployment
 
-Prior to deployment, all water temperature loggers undergo a QA/QC check as described in [@mauger2015].
+Prior to deployment, all water temperature loggers undergo a QA/QC check using ice-water and room temperature water as described in [@mauger2015].
 
 #### Site Checks
 
 Content TBD here.
 
 #### Post-deployment
+
+##### Fall 2022 Site Visits
 
 We downloaded data from all loggers in September/October 2022, and reviewed it in Spring 2023. Each logger's time series was visually inspected in an R Shiny plot for data that is non-representative of stream channel conditions, such as exposure to air or burial in sand.
 
@@ -254,6 +256,19 @@ Records for time periods flagged for individual loggers are recorded and availab
 xfun::embed_file("other/input/temperature_loggers/qa_qc/temp_logger_flagged_data.csv", text = "Download Temperature Logger Flagged Data Records")
 
 ```
+
+
+
+<br>
+
+##### Spring / Summer 2023 Site Visits
+
+All water temperature logger sites were visited in Spring / Summer 2023, and log files acquired from each logger. The process QA/QC described from Fall 2022 was applied in an identical fashion.
+
+(source csv files from diff folder and take through same process. remove dates from prior to earliest previous round of visits, join two dfs, then exclude redundant rows. hide code chunks since we already showed it once)
+
+<br>
+
 
 ### Preliminary Water Temperature Data
 

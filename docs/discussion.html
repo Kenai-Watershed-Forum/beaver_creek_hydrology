@@ -54,7 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -177,7 +196,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#water-temperature-metrics-and-anadromous-habitat" id="toc-water-temperature-metrics-and-anadromous-habitat" class="nav-link active" data-scroll-target="#water-temperature-metrics-and-anadromous-habitat"><span class="header-section-number">3.1</span> Water Temperature Metrics and Anadromous Habitat</a></li>
+  <li><a href="#water-temperature-metrics-and-anadromous-habitat" id="toc-water-temperature-metrics-and-anadromous-habitat" class="nav-link active" data-scroll-target="#water-temperature-metrics-and-anadromous-habitat"><span class="header-section-number">3.1</span> Water Temperature Metrics and Anadromous Habitat</a>
+  <ul class="collapse">
+  <li><a href="#water-temperature-metrics" id="toc-water-temperature-metrics" class="nav-link" data-scroll-target="#water-temperature-metrics"><span class="header-section-number">3.1.1</span> Water Temperature Metrics</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Kenai-Watershed-Forum/beaver_creek_hydrology/edit/main/discussion.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -194,12 +216,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
-    </div>
-  </div>
   
     
   </div>
@@ -207,13 +223,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>Discussion among the research team is currently in progress on the following topics:</p>
 <section id="water-temperature-metrics-and-anadromous-habitat" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="water-temperature-metrics-and-anadromous-habitat"><span class="header-section-number">3.1</span> Water Temperature Metrics and Anadromous Habitat</h2>
-<p>Discussion among the research team is currently in progress on the following topics …</p>
+<p>Hydrology model outputs from this project will provide spatially explicit projections of possible future discharge and temperature conditions for Beaver Creek under scenarios of climate change and groundwater withdrawal. We anticipate that discharge and temperature will vary by scenario in ways meaningful to aquatic habitat throughout Beaver Creek. We intend to evaluate these predictions against criteria found in the literature to help understand potential effects on fish, particularly anadromous (e.g.&nbsp;salmonid) species.</p>
+<p>The following is a discussion of potentially relevant water temperature metrics. Depending on the time scale of model outputs, some metrics may be more applicable than others.</p>
+<section id="water-temperature-metrics" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="water-temperature-metrics"><span class="header-section-number">3.1.1</span> Water Temperature Metrics</h3>
+<p>A suite of over fifty distinct temperature metrics may be calculated using an existing R script published in Appendix B of 2013 USGS report focused on cold-water streams in the Nevada desert [<span class="citation" data-cites="falke2013">Falke, Dunham, and Mills (<a href="references.html#ref-falke2013" role="doc-biblioref">2013</a>)</span>]<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>The list of 52 metrics each fall in to one of the following five categories:</p>
+<ul>
+<li><p>Magnitude</p></li>
+<li><p>Variation</p></li>
+<li><p>Frequency</p></li>
+<li><p>Duration</p></li>
+<li><p>Timing</p></li>
+</ul>
+<p>From this list, researchers in <span class="citation" data-cites="mauger2017">(<a href="references.html#ref-mauger2017" role="doc-biblioref">Mauger et al. 2017</a>)</span> chose three specific metrics to evaluate when considering regional-scale variations of lotic freshwater thermal regimes in the Cook Inlet region:</p>
+<blockquote class="blockquote">
+<p>“We selected three metrics to describe aspects of the summer temperature regimes in the 48 streams: mean July temperature, maximum weekly average temperature (MWAT), and maximum weekly maximum temperature (MWMT). We chose mean July stream temperature because this is typically the hottest month in southcentral Alaska. We calculated mean July temperature only for site-years when at least 90% of the days were captured (&gt;27 days). We used MWAT and MWMT because they represent an intermediate time period over which transient high temperatures may affect fitness in aquatic organisms.</p>
+</blockquote>
+<p>Researchers focusing on stream temperatures in the nearby Mat-Su valley region used a cluster analysis to characterize thermal regimes using a different subset of descriptors <span class="citation" data-cites="shaftel2020">(<a href="references.html#ref-shaftel2020" role="doc-biblioref">Shaftel et al. 2020</a>)</span>:</p>
+<blockquote class="blockquote">
+<p>[We used] … metrics that represent the magnitude, variability, frequency, duration, and timing of temperature events related to salmon life histories. We used cluster analysis to characterize thermal regimes present in the Matanuska-Susitna (Mat-Su) Basin based on 10 nonredundant temperature metrics and identified the most important drivers of our thermal regimes using random forests.</p>
+</blockquote>
+<p>Both of these manuscripts focused on southcentral Alaska temperature regimes are relevant to our work focused on Beaver Creek, but are focused on distinguishing and decribing thermal regimes rather than specifically on biological effects on anadromous species.</p>
+<p>Meyer et al.&nbsp;used a bioenergetics modeling approach to evaluate potential effects of water temperature and food consumption on summer growth rates of juvenile Chinook and coho salmon in the Kenai River watershed <span class="citation" data-cites="meyer2023">(<a href="references.html#ref-meyer2023" role="doc-biblioref">Meyer et al. 2023</a>)</span>.</p>
+<section id="state-and-federal-water-temperature-mangement-criteria" class="level4" data-number="3.1.1.1">
+<h4 data-number="3.1.1.1" class="anchored" data-anchor-id="state-and-federal-water-temperature-mangement-criteria"><span class="header-section-number">3.1.1.1</span> State and Federal Water Temperature Mangement Criteria</h4>
+<ul>
+<li>ADEC Values</li>
+<li>EPA values</li>
+</ul>
+<p>A basic potential approach – for each stream segment under each scenario (climate/flow/time period), evaluate the total proportion of time spent above state &amp; federal criteria value. Likely to see meaningful spatial variation.</p>
+<p>[Work in progress here.]</p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-falke2013" class="csl-entry" role="listitem">
+Falke, J A, Jason B Dunham, and Amy Mills. 2013. <span>“Variability in Summer Stream Temperatures in Nevada: Implications for Monitoring and Assessment.”</span> Carson City, NV.
+</div>
+<div id="ref-mauger2017" class="csl-entry" role="listitem">
+Mauger, Sue, Rebecca Shaftel, Jason C Leppi, and Daniel J Rinella. 2017. <span>“Summer Temperature Regimes in Southcentral Alaska Streams: Watershed Drivers of Variation and Potential Implications for Pacific Salmon.”</span> <em>Can. J. Fish. Aquat. Sci.</em> 74 (5): 702–15. <a href="https://doi.org/10.1139/cjfas-2016-0076">https://doi.org/10.1139/cjfas-2016-0076</a>.
+</div>
+<div id="ref-meyer2023" class="csl-entry" role="listitem">
+Meyer, Benjamin E., Mark S. Wipfli, Erik R. Schoen, Daniel J. Rinella, and Jeffrey A. Falke. 2023. <span>“Landscape Characteristics Influence Projected Growth Rates of Stream-Resident Juvenile Salmon in the Face of Climate Change in the Kenai River Watershed, South-Central Alaska.”</span> <em>Transactions of the American Fisheries Society</em> 152 (2): 169–86. <a href="https://doi.org/10.1002/tafs.10397">https://doi.org/10.1002/tafs.10397</a>.
+</div>
+<div id="ref-shaftel2020" class="csl-entry" role="listitem">
+Shaftel, Rebecca, Dustin Merrigan, Leslie Jones, and Sue Mauger. 2020. <span>“Stream Temperature Models and Applications in the Anchor, Kenai and Deshka River Watersheds.”</span>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><a href="https://paperpile.com/app/p/c29b459f-89c7-03ee-ad79-c4c9c9cfd817" class="uri">https://paperpile.com/app/p/c29b459f-89c7-03ee-ad79-c4c9c9cfd817</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -519,17 +588,59 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>execute:</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  echo: false</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  freeze: auto</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>date: "<span class="in">`r Sys.Date()`</span>"</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>format:</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  html:</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    code-fold: true</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    code-tools: true</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    code-summary: "Show the code"</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Water Temperature Metrics and Anadromous Habitat</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Discussion among the research team is currently in progress on the following topics ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>format:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  html:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    code-fold: true</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    code-tools: true</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    code-summary: "Show the code"</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Discussion among the research team is currently in progress on the following topics:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Water Temperature Metrics and Anadromous Habitat</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Hydrology model outputs from this project will provide spatially explicit projections of possible future discharge and temperature conditions for Beaver Creek under scenarios of climate change and groundwater withdrawal. We anticipate that discharge and temperature will vary by scenario in ways meaningful to aquatic habitat throughout Beaver Creek. We intend to evaluate these predictions against criteria found in the literature to help understand potential effects on fish, particularly anadromous (e.g. salmonid) species.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>The following is a discussion of potentially relevant water temperature metrics. Depending on the time scale of model outputs, some metrics may be more applicable than others.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Water Temperature Metrics</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>A suite of over fifty distinct temperature metrics may be calculated using an existing R script published in Appendix B of 2013 USGS report focused on cold-water streams in the Nevada desert <span class="co">[</span><span class="ot">@falke2013</span><span class="co">][^discussion-1]</span>.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ot">[^discussion-1]: &lt;https://paperpile.com/app/p/c29b459f-89c7-03ee-ad79-c4c9c9cfd817&gt;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>The list of 52 metrics each fall in to one of the following five categories:</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Magnitude</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Variation</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Frequency</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Duration</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Timing</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>From this list, researchers in <span class="co">[</span><span class="ot">@mauger2017</span><span class="co">]</span> chose three specific metrics to evaluate when considering regional-scale variations of lotic freshwater thermal regimes in the Cook Inlet region:</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "We selected three metrics to describe aspects of the summer temperature regimes in the 48 streams: mean July temperature, maximum weekly average temperature (MWAT), and maximum weekly maximum temperature (MWMT). We chose mean July stream temperature because this is typically the hottest month in southcentral Alaska. We calculated mean July temperature only for site-years when at least 90% of the days were captured (</span><span class="sc">\&gt;</span><span class="at">27 days). We used MWAT and MWMT because they represent an intermediate time period over which transient high temperatures may affect fitness in aquatic organisms.</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Researchers focusing on stream temperatures in the nearby Mat-Su valley region used a cluster analysis to characterize thermal regimes using a different subset of descriptors <span class="co">[</span><span class="ot">@shaftel2020</span><span class="co">]</span>:</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span><span class="sc">\[</span><span class="at">We used</span><span class="sc">\]</span><span class="at"> ... metrics that represent the magnitude, variability, frequency, duration, and timing of temperature events related to salmon life histories. We used cluster analysis to characterize thermal regimes present in the Matanuska-Susitna (Mat-Su) Basin based on 10 nonredundant temperature metrics and identified the most important drivers of our thermal regimes using random forests.</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Both of these manuscripts focused on southcentral Alaska temperature regimes are relevant to our work focused on Beaver Creek, but are focused on distinguishing and decribing thermal regimes rather than specifically on biological effects on anadromous species.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Meyer et al. used a bioenergetics modeling approach to evaluate potential effects of water temperature and food consumption on summer growth rates of juvenile Chinook and coho salmon in the Kenai River watershed <span class="co">[</span><span class="ot">@meyer2023</span><span class="co">]</span>.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">#### State and Federal Water Temperature Mangement Criteria</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>ADEC Values</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>EPA values</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>A basic potential approach -- for each stream segment under each scenario (climate/flow/time period), evaluate the total proportion of time spent above state &amp; federal criteria value. Likely to see meaningful spatial variation.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Work in progress here.</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

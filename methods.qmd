@@ -50,7 +50,7 @@ Our project includes water temperature data from a total of fifteen locations th
 
 Site locations and other metadata are available for download in the link below.
 
-```{r echo = F}
+```{r echo = F, message=FALSE}
 # prepare temperature logger station metadata
 station <- read_xlsx("other/input/all_loggers_and_wells_locations_notes.xlsx") %>%
   filter(site_type == "temp_logger",
@@ -281,7 +281,7 @@ rm(allData)
 
 ##### Spring / Summer 2023 Site Visits
 
-All water temperature logger sites were visited in Spring / Summer 2023, and log files were downloaded from each logger. The process QA/QC described from Fall 2022 was applied in an identical fashion. QA/QC files are available in the project's GitHub repository.
+All water temperature logger sites were revisited in Spring / Summer 2023, and log files were downloaded from each logger. The process QA/QC described from Fall 2022 was applied in an identical fashion. QA/QC files are available in the project's GitHub repository.
 
 
 ```{r, echo = F, cache = TRUE}
@@ -323,6 +323,20 @@ allData <- do.call(rbind, allData) %>%
 
 ```{r echo = F}
 
+# temperature unit conversion
+
+# one logger download file (#10816960) for summer 2023 was downloaded as Farenheight. We will convert it to celsius.
+
+allData %<>%
+  mutate(temp_C = case_when(
+    logger_serial == "10816960" ~ (temp_C -32)*(5/9)
+  ))
+           
+```
+
+
+```{r echo = F}
+
 # general approach:
 # 1.) use plotly to visually observe each time series from an individual logger
 # 2.) create csv of time periods that need to be flagged for each logger
@@ -333,8 +347,9 @@ allData <- do.call(rbind, allData) %>%
 # set logger id
 # remove hashtags below one at a time to plot. Double-hashtag indicates that a visual inspection was completed for the summer 2023 download
 
-#logger <-10816960
-logger <-20012591
+logger <-10816960
+#logger <-20012591 [This logger is located at the KWF Beaver Creek long term site. Data from this logger is not available after fall 2022, but data from the twin logger at this location is, #21488142]
+##logger <- 21488142
 ##logger <-20625008
 ##logger <-21235340
 ##logger <-21235341
@@ -348,10 +363,6 @@ logger <-20012591
 ##logger <-21444874
 ##logger <-21488145
 
-# note: long term KWF site at beaver creek did not have data available from logger #20012591 in summer 2023. We will instead use paired logger #21488142
-
-
-# 7/27/23 - missing ONE logger files from summer 2023 - may be on lab rugged notebook desktop
 
 # working here: next steps:
 ## adjust script to incorporate event when a new logger replaces the old one at the same site
@@ -403,7 +414,7 @@ allData$useData[flagPivs] <- 0
 
 ```
 
-```{r echo = F}
+```{r echo = F, eval = F}
 
 # plot with flagged data in red
 ggplotly(
@@ -424,7 +435,6 @@ ggplotly(
 ```
 
 
-
 ```{r, echo = F}
 
 # rename existing allData file as Summer 2023 specifically
@@ -434,35 +444,33 @@ rm(allData)
 ```
 
 
+```{r echo = F}
+
+# joining dataframes from multiple seasons
+
+# join post-QA/QC dataframes from fall 2022 and summer 2023 downloads
+allData <- bind_rows(allData_fall22,allData_summer23) %>%
+  # remove redundant data
+  distinct()
+
+# remove old dataframes
+rm(allData_fall22,allData_summer23)
+
+```
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(source csv files from diff folder and take through same process. remove dates from prior to earliest previous round of visits, join two dfs, then exclude redundant rows. hide code chunks since we already showed it once)
 
 <br>
 
 
-### Preliminary Water Temperature Data
-
-<REDO THIS SECTION INTEGRATE NEW DATA FROM 2023>
+### Download Preliminary Water Temperature Data
 
 Water temperature will be applied as part of ongoing watershed-scale modeling efforts. At a later stage, it will be housed in a public repository such as AKTEMP (<https://aktemp.uaa.alaska.edu>) and others.
 
-Preliminary water temperature files are available for download at the link below.
+Preliminary water temperature files are available for download at the link below. 
+
+[NOTE: the long-term KWF logger site, also labeled "beaver_creek_usgs_temp_3" in this download, has a pair of twin loggers at one location.]
 
 ```{r echo = F, message = F}
 

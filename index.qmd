@@ -16,4 +16,14 @@ In Spring 2022, the United States Geological Survey (USGS) initiated a partnersh
 
 This document is a draft in progress and is for use only in disseminating information among the research team. All data is preliminary and has not been approved for use in publications by USGS or any other entity, as of `r Sys.Date()`.
 
+The research team includes the following personnel:
+
+-   [Dr. Joshua Koch](https://www.usgs.gov/staff-profiles/joshua-c-koch)- USGS Alaska Science Center
+
+-   [Megan Haserodt](https://www.usgs.gov/staff-profiles/megan-j-haserodt)- USGS Upper Midwest Water Science Center
+
+-   [Andrew Leaf](https://www.usgs.gov/staff-profiles/andrew-t-leaf) - USGS Upper Midwest Water Science Center
+
+-   [Benjamin Meyer](https://www.kenaiwatershed.org/contact-our-staff/)- Kenai Watershed Forum
+
 For more details visit <https://www.kenaiwatershed.org/water-research-news/usgs-beaver-creek/>.

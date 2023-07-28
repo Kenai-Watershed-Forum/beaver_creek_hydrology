@@ -1,0 +1,16 @@
+# Discussion
+
+---
+execute:
+  echo: false
+  freeze: auto
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    code-summary: "Show the code"
+---
+
+## Water Temperature Metrics and Anadromous Habitat
+
+Discussion among the research team is currently in progress on the following topics ...

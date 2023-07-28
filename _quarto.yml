@@ -11,6 +11,7 @@ book:
     - index.qmd
     - methods.qmd
     - summary.qmd
+    - discussion.qmd
     - references.qmd
 
   repo-url: https://github.com/Kenai-Watershed-Forum/beaver_creek_hydrology

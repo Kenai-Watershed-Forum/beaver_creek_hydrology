@@ -1,0 +1,19 @@
+logger_serial,date_time_start,date_time_stop,notes
+10816960,7/4/2022 0:06,7/7/2022 12:00,pre-deployment
+20625008,7/4/2022 18:00,7/7/2022 12:15,
+21235340,7/4/2022 18:00,7/5/2022 18:00,
+21235341,7/4/2022 18:00,7/5/2022 18:00,
+21235343,7/4/2022 18:00,7/6/2022 18:00,
+21444843,7/4/2022 18:00,7/6/2022 20:00,
+21444844,7/4/2022 18:00,7/5/2022 17:00,
+21444844,9/15/2022 13:15,9/15/2022 13:30,air exposure during download
+21444870,7/4/2022 18:00,7/6/2022 18:00,
+21444872,7/4/2022 18:00,7/5/2022 15:00,
+21444872,9/15/2022 11:45,9/15/2022 12:00,air exposure during download
+21444873,7/4/2022 18:00,7/16/2022 17:00,"logger install date was 7/4/2022, but the time series looks odd and discontinous prior to 7/16/2022"
+21444874,7/4/2022 18:00,7/6/2022 13:00,
+21444874,10/20/2022 15:30,10/20/2022 15:30,"temperature is very stable. Location is in small trib likely groundwater fed, so this is reasonable. Check make sure not buried in sand."
+,,,
+,,,
+,,,
+, ,,

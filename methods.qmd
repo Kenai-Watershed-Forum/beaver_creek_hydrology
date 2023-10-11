@@ -145,7 +145,7 @@ An example plot for one logger is shown below, with flagged data in red and reta
 
 # Note: we have logger data both from the KWF site and the nearby (~200 m upstream) UAA site
 
-## choose location of all UNMODIFIED csv files downloaded from HOBOware
+## for "dir", choose location of all UNMODIFIED csv files downloaded from HOBOware
 
 
 # roll over the csv files in the "input" folder pulling in data
@@ -276,15 +276,12 @@ rm(allData)
 ```
 
 
-
 <br>
 
-##### Spring / Summer 2023 Site Visits
+##### Spring/Summer 2023 Site Visits
 
 
-All water temperature logger sites were visited in Spring / Summer 2023, and log files were downloaded from each logger. The process QA/QC described from Fall 2022 was applied in an identical fashion.
-
-All water temperature logger sites were revisited in Spring / Summer 2023, and log files were downloaded from each logger. The process QA/QC described from Fall 2022 was applied in an identical fashion. QA/QC files are available in the project's GitHub repository.
+All water temperature logger sites were visited in Fall 2023, and log files were downloaded from each logger. The QA/QC process described from Fall 2022 was applied in an identical fashion.
 
 
 ```{r, echo = F, cache = TRUE}
@@ -447,7 +444,184 @@ rm(allData)
 ```
 
 
+<br>
+
+##### Fall 2023 Site Visits
+
+WORKING HERE!!!
+
+All water temperature logger sites were visited in Fall 2023, and log files were downloaded from each logger. The QA/QC process described from Fall 2022 was applied in an identical fashion.
+
+
+```{r, echo = F, cache = TRUE}
+
+# Prepare water temperature data for inspection
+
+# read in seperate csv to match site metadata with logger serial number
+
+# check out what format / procedure is need for data upload to AKTEMP; see if the above process matches the needs of this outcome
+
+## read in and prepare logger data
+
+## choose location of all UNMODIFIED csv files downloaded from HOBOware
+
+
+# roll over the csv files in the "input" folder pulling in data
+dir <- "other/input/temperature_loggers/fall_2023/csv/"
+csvNames <- sort(list.files(dir, full.names = TRUE))
+allData <- list()
+colTypes <- cols("i", "c", "d", "?", "_", "_", "_")
+
+# run loop
+for (i in seq_along(csvNames)) {
+  tmpData <- read_csv(csvNames[i], col_types = colTypes, skip = 1) %>%
+    select(starts_with(c("Date","Temp")))
+  colnames(tmpData) <- c("date_time","temp_C")
+  tmpData %<>% transform(date_time = mdy_hms(date_time))
+  tmpData$logger_serial <- ex_between(csvNames[i], "csv/", ".csv")
+  allData[[i]] <- tmpData
+}
+
+# merge all the datasets into one data frame
+allData <- do.call(rbind, allData) %>%
+  distinct()
+
+
+
+
+
+```
+
 ```{r echo = F}
+
+# NOTE: upon inspection, it is clear that all of the Fall 2023 temperature loggers are in Farenheight instead of Celsius. Convert to celsius.
+
+# temperature unit conversion
+
+allData %<>%
+  mutate(temp_C = (temp_C - 31)*(5/9))
+           
+```
+
+
+```{r echo = F}
+
+# general approach:
+# 1.) use plotly to visually observe each time series from an individual logger
+# 2.) create csv of time periods that need to be flagged for each logger
+
+# manual procedure
+# create ggplotly chart for each time series, one at a time, 
+ 
+# set logger id
+# remove hashtags below one at a time to plot. Double-hashtag indicates that a visual inspection was completed for the summer 2023 download
+
+logger <-10816960
+#logger <-20012591 [This logger is located at the KWF Beaver Creek long term site. Data from this logger is not available after fall 2022, but data from the twin logger at this location is, #21488142]
+##logger <- 21488142
+##logger <-20625008
+##logger <-21235340
+##logger <-21235341
+##logger <-21235343
+##logger <-21444843
+##logger <-21444844
+##logger <-21444869
+##logger <-21444870
+##logger <-21444872
+##logger <-21444873
+##logger <-21444874
+##logger <-21488145
+
+
+# working here: next steps:
+## adjust script to incorporate event when a new logger replaces the old one at the same site
+## locate missing log file for site #15 ( by gravel pit)
+## decide on temp metrics outcome + literature
+
+```
+
+```{r, echo = F, eval = F}
+
+# remove "eval = F" when we want to use this plot during qa/qc
+# plot
+ggplotly(
+  p <- allData %>%
+  # modified site one at a time here to visually inspect datasets
+  filter(logger_serial == logger) %>%
+  ggplot(aes(date_time,temp_C)) +
+  geom_point() +
+  ggtitle(paste("Logger",logger, "pre-inspection")),
+  # plot size
+  height = 350, width = 600
+  )
+
+```
+
+```{r echo = F}
+
+# read in file of visually identified flagged data
+flagData <- read.csv("other/input/temperature_loggers/summer_2023/qa_qc/temp_logger_flagged_data.csv", sep = ",") %>%
+  select(-notes) %>% drop_na() %>%
+  transform(date_time_start = mdy_hm(date_time_start),
+            date_time_stop = mdy_hm(date_time_stop)) %>%
+  transform(logger_serial = as.character(logger_serial))
+
+# mark flagged events in the full record
+# ------------------------------------------------------------------------------
+# all starts usable
+allData$useData <- 1
+
+# then we roll over the flags identifying matching rows in the full record
+flagPivs <- unique(unlist(apply(flagData, 1, function(v) {
+  which(allData$logger_serial == v[1] & 
+          allData$date_time >= as_datetime(v[2]) & 
+          allData$date_time <= as_datetime(v[3]))
+})))
+
+# finally, we mark all useData values of bad events as 0
+allData$useData[flagPivs] <- 0
+
+```
+
+```{r echo = F, eval = F}
+
+# plot with flagged data in red
+ggplotly(
+  p <- allData %>%
+    # modified site one at a time here to visually inspect datasets
+    filter(logger_serial == logger) %>%
+    mutate(status = case_when(
+      useData == 1 ~ "Keep",
+      useData == 0 ~ "Remove")) %>%
+    ggplot(aes(date_time,temp_C, color = status)) +
+    geom_point() +
+    scale_colour_manual("Status",values=c("black","red")) +
+    ggtitle(paste("Logger",logger, "with flagged data")),
+  # plot size
+  height = 350, width = 600
+  )
+
+```
+
+
+```{r, echo = F}
+
+# rename existing allData file as Summer 2023 specifically
+allData_summer23 <- allData
+rm(allData)
+
+```
+
+
+
+
+
+
+
+
+```{r echo = F}
+
+# combining data from multiple seasons
 
 # joining dataframes from multiple seasons
 

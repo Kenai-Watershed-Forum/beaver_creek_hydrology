@@ -658,7 +658,7 @@ Water temperature will be applied as part of ongoing watershed-scale modeling ef
 
 Preliminary water temperature files are available for download at the link below. 
 
-[NOTE: the long-term KWF logger site, also labeled "beaver_creek_usgs_temp_3" in this download, has a pair of twin loggers at one location.]
+[NOTE: the long-term KWF logger site, "TL-12", has a pair of twin loggers at one location.]
 
 ```{r echo = F, message = F}
 

@@ -52,18 +52,21 @@ Site locations and other metadata are available for download in the link below.
 
 ```{r echo = F, message=FALSE}
 # prepare temperature logger station metadata
-station <- read_xlsx("other/input/all_loggers_and_wells_locations_notes.xlsx") %>%
-  filter(site_type == "temp_logger",
-         !is.na(latitude)) %>%
-  select(site_id,
+station <- read_xlsx("other/input/temperature_logger_site_summary.xlsx") %>%
+  clean_names() %>%
+  rename(logger_serial = logger_serial_num_fieldsheet,
+         latitude = latitude_dd,
+         longitude = longitude_dd) %>%
+  select(site_sheet,
          latitude,longitude,
          logger_serial,
+         map_label,
          location_notes)
 
 # format station info so that contents fit in AKTEMP template
 station %<>%
   mutate(
-    "Code" = site_id,
+    "Code" = map_label,
     "Latitude" = latitude,
     "Longitude" = longitude,
     "Timezone" = "US/Alaska (UTC-9 / UTC-8)",
@@ -74,7 +77,7 @@ station %<>%
     "Well-mixed" = "TRUE",
     "Active" = "TRUE",
     "Reference URL" = "TBD",
-    "Private" = "FALSE") 
+    "Private" = "FALSE")
 
 # acquire and inspect all column names from AKTEMP template
 aktemp_station_colnames <- read_excel("other/input/AKTEMP_templates/AKTEMP-stations-template.xlsx", sheet = "STATIONS") %>%
@@ -82,7 +85,8 @@ aktemp_station_colnames <- read_excel("other/input/AKTEMP_templates/AKTEMP-stati
 
 # subset columns to those which are provided in the AKTEMP template
 station %<>%
-  select(one_of(aktemp_station_colnames),"logger_serial")
+  select(one_of(aktemp_station_colnames),"logger_serial") %>%
+  transform(logger_serial = as.character(logger_serial))
 
 # export csv to local repo
 write.csv(station,"other/output/station.csv", row.names = F)
@@ -319,6 +323,7 @@ for (i in seq_along(csvNames)) {
 allData <- do.call(rbind, allData) %>%
   distinct()
 
+
 ```
 
 ```{r echo = F}
@@ -329,7 +334,8 @@ allData <- do.call(rbind, allData) %>%
 
 allData %<>%
   mutate(temp_C = case_when(
-    logger_serial == "10816960" ~ (temp_C -32)*(5/9)
+    logger_serial == "10816960" ~ (temp_C -32)*(5/9),
+    TRUE ~ temp_C
   ))
            
 ```
@@ -448,7 +454,9 @@ rm(allData)
 
 ##### Fall 2023 Site Visits
 
-All water temperature logger sites were visited in Fall 2023, and log files were downloaded from each logger. The QA/QC process described from Fall 2022 was applied in an identical fashion.
+Most water temperature logger sites were visited in Fall 2023, and log files were downloaded from each logger. The QA/QC process described from Fall 2022 was applied in an identical fashion.
+
+Logger sites that were not downloaded in Fall 2023 include TL-1, TL-3, and TL-11. These sites will be visited by th end of October 2023 if weather conditions allow.
 
 
 ```{r, echo = F, cache = TRUE}
@@ -539,7 +547,6 @@ allData %<>%
 ```
 
 
-WORKING HERE 10/11/2023
 
 
 ```{r, echo = F, eval = F}
@@ -628,7 +635,7 @@ rm(allData)
 # joining dataframes from multiple seasons
 
 # join post-QA/QC dataframes from fall 2022, summer 2023, and fall 2023 downloads
-allData <- bind_rows(allData_fall22,allData_summer23) %>%
+allData <- bind_rows(allData_fall22,allData_summer23,allData_fall23) %>%
   # remove redundant data
   distinct()
 
@@ -654,7 +661,7 @@ Preliminary water temperature files are available for download at the link below
 
 ```{r echo = F, message = F}
 
-# exclude flagged data
+# exclude flagged data and NA values
 allData %<>%
   filter(useData == 1) %>%
   select(-useData) %>%

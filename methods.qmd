@@ -456,7 +456,7 @@ rm(allData)
 
 Most water temperature logger sites were visited in Fall 2023, and log files were downloaded from each logger. The QA/QC process described from Fall 2022 was applied in an identical fashion.
 
-Logger sites that were not downloaded in Fall 2023 include TL-1, TL-3, and TL-11. These sites will be visited by th end of October 2023 if weather conditions allow.
+Logger sites that were not downloaded in Fall 2023 include TL-1, TL-3, and TL-11. These sites will be visited by the end of October 2023 if weather conditions allow.
 
 
 ```{r, echo = F, cache = TRUE}

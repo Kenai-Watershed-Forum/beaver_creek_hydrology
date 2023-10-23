@@ -86,7 +86,8 @@ aktemp_station_colnames <- read_excel("other/input/AKTEMP_templates/AKTEMP-stati
 # subset columns to those which are provided in the AKTEMP template
 station %<>%
   select(one_of(aktemp_station_colnames),"logger_serial") %>%
-  transform(logger_serial = as.character(logger_serial))
+  transform(logger_serial = as.character(logger_serial)) %>%
+  filter(!is.na(Code))
 
 # export csv to local repo
 write.csv(station,"other/output/station.csv", row.names = F)

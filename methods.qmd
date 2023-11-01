@@ -280,14 +280,11 @@ rm(allData)
 
 ```
 
-
 <br>
 
 ##### Spring/Summer 2023 Site Visits
 
-
 All water temperature logger sites were visited in Fall 2023, and log files were downloaded from each logger. The QA/QC process described from Fall 2022 was applied in an identical fashion.
-
 
 ```{r, echo = F, cache = TRUE}
 
@@ -340,7 +337,6 @@ allData %<>%
   ))
            
 ```
-
 
 ```{r echo = F}
 
@@ -441,7 +437,6 @@ ggplotly(
 
 ```
 
-
 ```{r, echo = F}
 
 # rename existing allData file as Summer 2023 specifically
@@ -450,7 +445,6 @@ rm(allData)
 
 ```
 
-
 <br>
 
 ##### Fall 2023 Site Visits
@@ -458,7 +452,6 @@ rm(allData)
 Most water temperature logger sites were visited in Fall 2023, and log files were downloaded from each logger. The QA/QC process described from Fall 2022 was applied in an identical fashion.
 
 Logger sites that were not downloaded in Fall 2023 include TL-1, TL-3, and TL-11. These sites will be visited by the end of October 2023 if weather conditions allow.
-
 
 ```{r, echo = F, cache = TRUE}
 
@@ -506,7 +499,6 @@ allData %<>%
            
 ```
 
-
 ```{r echo = F}
 
 # general approach:
@@ -526,14 +518,14 @@ allData %<>%
 ##logger <-21235340
 ##logger <-21235341
 ##logger <-21235343
-#logger <-21444843    ## csv not present 10/11/2023
+#logger <-21444843    ## csv not present 10/11/2023. did not check site fall 2023
 ##logger <-21444844
-logger <-21444869    ## csv not present 10/11/2023
+logger <-21444869    
 ##logger <-21444870
 ##logger <-21444872
 ##logger <-21444873
 ##logger <-21444874
-##logger <-21488145   ## csv not present 10/11/2023
+##logger <-21488145   ## csv not present 10/11/2023. did not check site fall 2023
 
 
 # working here: next steps:
@@ -546,9 +538,6 @@ logger <-21444869    ## csv not present 10/11/2023
 # check summer 2023 paper forms to confirm serial numbers ... make sure these correspond with metadata file
 
 ```
-
-
-
 
 ```{r, echo = F, eval = F}
 
@@ -613,7 +602,6 @@ ggplotly(
 
 ```
 
-
 ```{r, echo = F}
 
 # rename existing allData file as Summer 2023 specifically
@@ -621,13 +609,6 @@ allData_fall23 <- allData
 rm(allData)
 
 ```
-
-
-
-
-
-
-
 
 ```{r echo = F}
 
@@ -645,20 +626,15 @@ rm(allData_fall22,allData_summer23,allData_fall23)
 
 ```
 
-
-
-
-
 <br>
-
 
 ### Download Preliminary Water Temperature Data
 
 Water temperature will be applied as part of ongoing watershed-scale modeling efforts. At a later stage, it will be housed in a public repository such as AKTEMP (<https://aktemp.uaa.alaska.edu>) and others.
 
-Preliminary water temperature files are available for download at the link below. 
+Preliminary water temperature files are available for download at the link below.
 
-[NOTE: the long-term KWF logger site, "TL-12", has a pair of twin loggers at one location.]
+\[NOTE: the long-term KWF logger site, "TL-12", has a pair of twin loggers at one location. Data from 2019-2022 at this site is [available for download at this hyperlink](https://github.com/Kenai-Watershed-Forum/kwf_temp_loggers/blob/main/other/output/beaver_creek_2019_2022).\]
 
 ```{r echo = F, message = F}
 
